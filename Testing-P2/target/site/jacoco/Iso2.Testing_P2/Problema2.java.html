@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Problema2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Testing-P2</a> &gt; <a href="index.source.html" class="el_package">Iso2.Testing_P2</a> &gt; <span class="el_source">Problema2.java</span></div><h1>Problema2.java</h1><pre class="source lang-java linenums">package Iso2.Testing_P2;
+
+public class Problema2 {
+
+<span class="fc" id="L5">	public Problema2() {}</span>
+	
+	//Se devuelve -1 si no se puede viajar o si algunos de los par�metros enteros es negativo
+	public double precioFinal(int nCasos, boolean covid, boolean contacto, boolean sintomas, boolean pasaporteCovid,
+			int edad, double precio, int ocupados, int aforoMaximo) {
+		
+<span class="pc bpc" id="L11" title="2 of 8 branches missed.">		if(edad &lt; 0 || precio &lt; 0 || ocupados &lt; 0 || aforoMaximo &lt; 0) return -1;</span>
+		
+<span class="pc bpc" id="L13" title="3 of 8 branches missed.">		if(!(covid || contacto || sintomas) &amp;&amp; pasaporteCovid) {</span>
+			
+<span class="fc bfc" id="L15" title="All 6 branches covered.">			switch(nCasos) {</span>
+				case 0: 
+<span class="pc bpc" id="L17" title="1 of 2 branches missed.">					if(ocupados &lt; aforoMaximo) {</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">						if(edad &lt; 23) {</span>
+<span class="fc" id="L19">							return precio * 0.4;</span>
+						}
+<span class="fc bfc" id="L21" title="All 2 branches covered.">						if(edad &gt; 65) {</span>
+<span class="fc" id="L22">							return precio * 0.2;</span>
+						}
+<span class="fc" id="L24">						return precio;</span>
+					}
+					
+				case 1:
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">					if(ocupados &lt; aforoMaximo * 0.8) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">						if(edad &lt; 23) {</span>
+<span class="fc" id="L30">							return precio * 0.7;</span>
+						}
+<span class="fc bfc" id="L32" title="All 2 branches covered.">						if(edad &gt; 65) {</span>
+<span class="fc" id="L33">							return precio * 0.5;</span>
+						}
+<span class="fc" id="L35">						return precio;</span>
+					}
+					
+				case 2:
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">					if(ocupados &lt; aforoMaximo * 0.6 * 0.4) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">						if(edad &gt; 65) {</span>
+<span class="fc" id="L41">							return precio * 1.2;</span>
+						}
+<span class="fc" id="L43">						return precio;</span>
+					}
+					
+				case 3:
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">					if(ocupados &lt; aforoMaximo * 0.4 * 0.2) {</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">						if(edad &lt; 23) {</span>
+<span class="fc" id="L49">							return precio * 1.2;</span>
+						}
+<span class="fc bfc" id="L51" title="All 2 branches covered.">						if(edad &gt; 65) {</span>
+<span class="fc" id="L52">							return precio * 1.5;</span>
+						}
+<span class="fc" id="L54">						return precio;</span>
+					}
+					
+				case 4:
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">					if(ocupados &lt; aforoMaximo * 0.3 * 0.1) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">						if(edad &lt; 23) {</span>
+<span class="fc" id="L60">							return precio * 1.5;</span>
+						}
+<span class="fc bfc" id="L62" title="All 2 branches covered.">						if(edad &gt; 65) {</span>
+<span class="fc" id="L63">							return -1;</span>
+						}
+<span class="fc" id="L65">						return precio;</span>
+					}
+			}
+<span class="fc" id="L68">			return -1;</span>
+		}
+		else {
+<span class="fc" id="L71">			return -1;</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
